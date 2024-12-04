@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 네비게이션 스타일 */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 2.25rem;
+}
+
+.logo-first {
+    color: #D35D6E;
+}
+
+.logo-second {
+    color: #4A5568;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 160px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 임베딩 섹션 스타일 수정 */
+.embed-section {
+    flex: 1;
+    padding: 0;
+    background-color: #fff;
+    position: relative;
+}
+
+.padlet-embed {
+    width: 100%;
+}
+
+.padlet-embed p {
+    margin: 0;
+    padding: 0;
+}
+
+.padlet-embed iframe {
+    width: 100%;
+    height: 608px !important;
+    border: none;
+    display: block;
+}
+
+/* Padlet 로고 컨테이너 */
+.padlet-embed > div:last-child {
+    height: 28px;
+}
+
+/* 푸터 섹션 스타일 */
+.footer-section {
+    flex-shrink: 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    color: #333;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #D35D6E;
+}
+
+.footer-content {
+    min-height: 200px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+} 

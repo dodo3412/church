@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹사이트 레이아웃</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function switchPadlet(type) {
+            const defaultPadlet = document.getElementById('default-padlet');
+            const churchPadlet = document.getElementById('church-padlet');
+            const pastorPadlet = document.getElementById('pastor-padlet');
+            
+            // 모든 Padlet 숨기기
+            defaultPadlet.style.display = 'none';
+            churchPadlet.style.display = 'none';
+            pastorPadlet.style.display = 'none';
+            
+            // 선택된 Padlet 보여주기
+            switch(type) {
+                case 'church':
+                    churchPadlet.style.display = 'block';
+                    break;
+                case 'pastor':
+                    pastorPadlet.style.display = 'block';
+                    break;
+                default:
+                    defaultPadlet.style.display = 'block';
+            }
+        }
+
+        // 페이지 로드 시 기본 Padlet 표시
+        window.onload = function() {
+            switchPadlet('default');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 상단 네비게이션 -->
+        <nav class="nav-container">
+            <div class="logo"><span class="logo-first">새중앙</span><span class="logo-second">교회</span></div>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#" onclick="switchPadlet('pastor')">김종현목사 소개</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">약력</a></li>
+                        <li><a href="#">저서</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" onclick="switchPadlet('church')">교회 소개</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">교회 역사</a></li>
+                        <li><a href="#">섬기는 사람</a></li>
+                        <li><a href="#">교회 연혁</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">메뉴3</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">하위메뉴 3-1</a></li>
+                        <li><a href="#">하위메뉴 3-2</a></li>
+                        <li><a href="#">하위메뉴 3-3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">메뉴4</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">하위메뉴 4-1</a></li>
+                        <li><a href="#">하위메뉴 4-2</a></li>
+                        <li><a href="#">하위메뉴 4-3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 외부 임베딩 섹션 -->
+        <section class="embed-section">
+            <!-- 기본 Padlet -->
+            <div id="default-padlet" class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+                <p style="padding:0;margin:0">
+                    <iframe src="https://padlet.com/embed/11scnea06qkslll8" 
+                            frameborder="0" 
+                            allow="camera;microphone;geolocation" 
+                            style="width:100%;height:608px;display:block;padding:0;margin:0">
+                    </iframe>
+                </p>
+                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
+                    <a href="https://padlet.com?ref=embed" 
+                       style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" 
+                       target="_blank">
+                        <div style="display:flex;align-items:center;">
+                            <img src="https://padlet.net/embeds/made_with_padlet_2022.png" 
+                                 width="114" 
+                                 height="28" 
+                                 style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" 
+                                 alt="Padlet으로 만듦">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 교회 소개 Padlet -->
+            <div id="church-padlet" class="padlet-embed" style="display:none;border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+                <p style="padding:0;margin:0">
+                    <iframe src="https://padlet.com/embed/dinh7yv15yz2o5xa" 
+                            frameborder="0" 
+                            allow="camera;microphone;geolocation" 
+                            style="width:100%;height:608px;display:block;padding:0;margin:0">
+                    </iframe>
+                </p>
+                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
+                    <a href="https://padlet.com?ref=embed" 
+                       style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" 
+                       target="_blank">
+                        <div style="display:flex;align-items:center;">
+                            <img src="https://padlet.net/embeds/made_with_padlet_2022.png" 
+                                 width="114" 
+                                 height="28" 
+                                 style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" 
+                                 alt="Padlet으로 만듦">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 목사님 소개 Padlet -->
+            <div id="pastor-padlet" class="padlet-embed" style="display:none;border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+                <p style="padding:0;margin:0">
+                    <iframe src="https://padlet.com/embed/11scnea06qkslll8" 
+                            frameborder="0" 
+                            allow="camera;microphone;geolocation" 
+                            style="width:100%;height:608px;display:block;padding:0;margin:0">
+                    </iframe>
+                </p>
+                <div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px">
+                    <a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank">
+                        <div style="display:flex;align-items:center;">
+                            <img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 섹션 -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <!-- About Us 컬럼 -->
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <div class="footer-content">
+                        <!-- 내용이 들어갈 자리 -->
+                    </div>
+                </div>
+
+                <!-- Recent Notice 컬럼 -->
+                <div class="footer-column">
+                    <h3>Recent Notice</h3>
+                    <div class="footer-content">
+                        <!-- 내용이 들어갈 자리 -->
+                    </div>
+                </div>
+
+                <!-- Information 컬럼 -->
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <div class="footer-content">
+                        <!-- 내용이 들어갈 자리 -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 
